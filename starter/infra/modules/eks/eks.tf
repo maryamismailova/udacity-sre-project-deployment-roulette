@@ -40,4 +40,10 @@ resource "aws_eks_node_group" "node" {
   tags = {
     Name = "eks-${var.name}-nodes"
   }
+
+  lifecycle {
+    ignore_changes = [
+      scaling_config[0].desired_size
+    ]
+  }
 }

@@ -5,13 +5,6 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
-data "aws_eks_cluster" "cluster" {
-  name = module.project_eks.cluster_id
-}
-
-data "aws_eks_cluster_auth" "cluster" {
-  name = module.project_eks.cluster_id
-}
 
 module "project_eks" {
   source             = "./modules/eks"
