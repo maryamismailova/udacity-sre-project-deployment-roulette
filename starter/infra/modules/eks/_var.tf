@@ -26,3 +26,7 @@ variable "nodes_min_size" {
 variable "tags" {
   default = {}
 }
+
+variable "autoscaler_service_account" {
+  default = "cluster-autoscaler"
+}

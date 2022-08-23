@@ -1,0 +1,15 @@
+1. Hellow world was crashing. 
+
+$ kubectl get pods
+hello-world-d696c5567-pv6p5   0/1     CrashLoopBackOff   6          7m21s
+
+2. Checked logs for hello world service. Had this message displayed
+10.100.1.239 - - [23/Aug/2022 10:51:22] "GET /nginx_status HTTP/1.1" 500 -
+Failed health check you want to ping /healthz
+
+3. Replaced /nginx_status to /healthz
+
+4. Logs displayed:
+10.100.1.239 - - [23/Aug/2022 10:57:39] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+
